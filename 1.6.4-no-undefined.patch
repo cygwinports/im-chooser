@@ -1,0 +1,12 @@
+--- origsrc/im-chooser-1.6.4/libimchooseui/Makefile.am	2013-05-27 20:40:03.000000000 -0500
++++ src/im-chooser-1.6.4/libimchooseui/Makefile.am	2015-07-22 21:09:50.672212800 -0500
+@@ -97,6 +97,9 @@ libimchooseui_la_SOURCES =					\
+ 	imchooseui.c						\
+ 	imchooseuicellrendererlabel.c				\
+ 	$(NULL)
++libimchooseui_la_LDFLAGS =					\
++	-no-undefined						\
++	$(NULL)
+ libimchooseui_la_LIBADD =					\
+ 	libeggsmclient.la					\
+ 	$(NULL)

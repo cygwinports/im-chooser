@@ -1,0 +1,35 @@
+inherit gnome2
+
+NAME="im-chooser"
+VERSION=1.6.4
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="Input Method Selector GUI"
+DESCRIPTION="im-chooser provides a graphical user interface to switch Input
+Method being managed under imsettings."
+HOMEPAGE="https://fedorahosted.org/im-chooser/"
+SRC_URI="https://fedorahosted.org/releases/i/m/im-chooser/im-chooser-${VERSION}.tar.bz2"
+PATCH_URI="1.6.4-no-undefined.patch"
+
+PKG_NAMES="${NAME} ${NAME}-common xfce4-${NAME}"
+im_chooser_CONTENTS="
+	usr/bin/im-chooser.exe
+	usr/share/applications/im-chooser.desktop
+	usr/share/man/man1/im-chooser.1.gz
+"
+im_chooser_common_SUMMARY="Shared components for ${NAME} and xfce4-${NAME}"
+im_chooser_common_CONTENTS="
+	etc/postinstall/im-chooser.sh
+	usr/bin/cygimchooseui-0.dll
+	usr/share/doc/im-chooser/
+	usr/share/icons/hicolor/*/apps/im-chooser.*
+	usr/share/imchooseui/
+	usr/share/locale/*/LC_MESSAGES/im-chooser.mo
+"
+xfce4_im_chooser_CATEGORY="Xfce"
+xfce4_im_chooser_CONTENTS="
+	usr/bin/xfce4-im-chooser.exe
+	usr/share/applications/xfce4-im-chooser.desktop
+"
+# private library
+PKG_IGNORE="usr/lib/libimchooseui.dll.a"
