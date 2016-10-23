@@ -1,8 +1,8 @@
 inherit gnome2
 
 NAME="im-chooser"
-VERSION=1.6.4
-RELEASE=2
+VERSION=1.6.6
+RELEASE=1
 CATEGORY="X11"
 SUMMARY="Input Method Selector GUI"
 DESCRIPTION="im-chooser provides a graphical user interface to switch Input

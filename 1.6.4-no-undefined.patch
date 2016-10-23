@@ -1,3 +1,14 @@
+--- origsrc/im-chooser-1.6.6/configure.ac	2016-09-12 06:49:06.000000000 -0500
++++ src/im-chooser-1.6.6/configure.ac	2016-10-21 12:54:29.684683900 -0500
+@@ -54,7 +54,7 @@ PKG_CHECK_MODULES(GTK3, gtk+-3.0, [
+ 	IMCHOOSE_GTK_VERSION=3],[
+ 	PKG_CHECK_MODULES(GTK2, gtk+-2.0)
+ 	IMCHOOSE_GTK_VERSION=2])
+-PKG_CHECK_MODULES(SM, sm)
++PKG_CHECK_MODULES(SM, sm ice)
+ PKG_CHECK_MODULES(XFCE4, libxfce4util-1.0,[
+ 	enable_xfce=yes],[
+ 	enable_xfce=no])
 --- origsrc/im-chooser-1.6.4/libimchooseui/Makefile.am	2013-05-27 20:40:03.000000000 -0500
 +++ src/im-chooser-1.6.4/libimchooseui/Makefile.am	2015-07-22 21:09:50.672212800 -0500
 @@ -97,6 +97,9 @@ libimchooseui_la_SOURCES =					\
